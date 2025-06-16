@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+
+    <p id="p1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quo blanditiis consectetur sequi libero reiciendis maiores 
+       fugiat eligendi vero dolore consequatur id neque quae, molestiae eum quas nemo et minus.</p>
+    
+    <input id="inp1" type="text" placeholder="search...">
+    <input id="inp2" type="text" placeholder="replace...">
+
+    <button onclick="replaceText()">Replace</button>
+
+
+    <script>
+        let input1 = document.getElementById("inp1")
+        let input2 = document.getElementById("inp2")
+        let txt = document.getElementById("p1")
+
+
+        function replaceText(){
+
+            // let text = document.getElementById("p1").textContent
+
+            let text = txt.textContent
+
+            let caseReg = new RegExp(input1.value, "gi")
+
+            let newtxt = text.replace(caseReg, input2.value)
+            txt.textContent = newtxt
+
+        }
+
+    </script>
+
+
+
+    
+</body>
+</html>
